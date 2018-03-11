@@ -165,7 +165,7 @@ if __name__ == '__main__':
 
     try:
         import timing  # Optional
-    except:
+    except ImportError:
         pass
 
     if args.text:

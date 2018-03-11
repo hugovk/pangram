@@ -11,9 +11,9 @@ script:
   - python test_pangram.py
 
 after_success:
-  - pip install pep8 pyflakes
-  - pep8 *.py
+  - pip install pycodestyle pyflakes
   - pyflakes *.py
+  - pycodestyle *.py
 
 matrix:
   fast_finish: true
