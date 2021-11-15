@@ -7,10 +7,10 @@ TAGS = "tags:\n#pangram\n#Pangram Gutenberg\n#Project Gutenberg"
 
 
 def contains_pangram(text):
-    letter_found = {letter: False for letter in ALPHABET}
+    letter_found = {letter: False for letter in ALPHABET_SET}
 
     for char in text:
-        if char in ALPHABET:
+        if char in ALPHABET_SET:
             letter_found[char] = True
 
     return sum(letter_found.values()) == 26
