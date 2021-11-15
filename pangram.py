@@ -84,7 +84,7 @@ def find_pangram(text):
         right += 1
 
         # Print progress like 8.09%
-        percent = "%0.2f%%" % (100.0*right/total_length)
+        percent = f"{100.0*right/total_length:.2f}%"
         if last_percent != percent:
             last_percent = percent
             print(percent, end='\r')
