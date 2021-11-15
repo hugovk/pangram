@@ -70,9 +70,9 @@ def find_pangram(text):
             left -= 1
             window = text[left:right]
 
-#             print "Found a shorter pangram:"
-#             print (window)
-#             print len(window)
+            # print "Found a shorter pangram:"
+            # print (window)
+            # print len(window)
             # printit(left, right, window, best)
 
             if (not best) or (best and len(window) < len(best)):
@@ -87,7 +87,7 @@ def find_pangram(text):
         percent = f"{100.0*right/total_length:.2f}%"
         if last_percent != percent:
             last_percent = percent
-            print(percent, end='\r')
+            print(percent, end="\r")
 
     return best, best_index
 
@@ -112,18 +112,18 @@ def print_best(best, left, text):
     following_period = text.find(".", right)
 
     # Print the first line, usually contains title and author.
-    print(text.split('\n', 1)[0])
+    print(text.split("\n", 1)[0])
     print("-" * 80)
 
     html = "<p>"
 
     if previous_period:
-        html += text[previous_period+1:left]
+        html += text[previous_period + 1 : left]
 
     html += "<strong>" + best + "</strong>"
 
     if following_period:
-        html += text[right:following_period+1]
+        html += text[right : following_period + 1]
     html += "</p>"
 
     html += "\n\n<p>Length: " + str(len(best)) + "</p>"
@@ -135,6 +135,7 @@ def print_best(best, left, text):
 def recursive_find(inspec):
     import fnmatch
     import os
+
     matches = []
     head, tail = os.path.split(inspec)
     if len(head) == 0:
@@ -147,16 +148,13 @@ def recursive_find(inspec):
     return matches
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Find the shortest pangrammatic window in a text file.",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument(
-        'inspec', nargs='*',
-        help='Input file spec')
-    parser.add_argument(
-        '-t', '--text',
-        help='Check this text instead of a file')
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+    parser.add_argument("inspec", nargs="*", help="Input file spec")
+    parser.add_argument("-t", "--text", help="Check this text instead of a file")
 
     args = parser.parse_args()
     print(args)
