@@ -9,7 +9,6 @@ TAGS = "tags:\n#pangram\n#Pangram Gutenberg\n#Project Gutenberg"
 
 
 def contains_pangram(text):
-    text = text.lower()
     letter_found = {letter: False for letter in ALPHABET}
 
     for char in text:
@@ -36,6 +35,7 @@ def find_pangram(text):
 
     best = None
     best_index = None
+    text = text.lower()
 
     while right <= total_length:
 

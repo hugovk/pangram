@@ -38,7 +38,7 @@ class TestIt(unittest.TestCase):
 
         found, index = pangram.find_pangram(text)
 
-        self.assertEqual(found, "Cwm fjord bank glyphs vext quiz")
+        self.assertEqual(found, "cwm fjord bank glyphs vext quiz")
 
 
 if __name__ == '__main__':
