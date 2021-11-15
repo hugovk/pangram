@@ -7,7 +7,7 @@ Find the shortest pangrammatic window in a text file.
 
 Examples:
 
-```
+```sh
 pangram.py file.txt
 pangram.py dir/*.txt
 pangram.py dir_with_subdirs/*.txt
